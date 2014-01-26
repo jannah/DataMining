@@ -56,6 +56,20 @@ $ git checkout -b hw1-intro
 
 To submit your homework, click on the __Open a Pull Request__ button, on [Your Repo] page on Github. Fill in your submission comments and submit it.
 
+1. Once you have pushed in your changes [Your Repo] on Github in the homework branch (i.e. `hw1-intro`), you might see a button like this on your repository page:
+
+![Initiate Pull Request](img/pullrequest_init.png "Initiate Pull Request")
+
+__Click this button__
+
+2. Fill out the pull request form, as shown below, and submit it. 
+
+![Submit Pull Request](img/pullrequest_successful.png "Submit Pull Request")
+
+#### A __quick tip__
+
+You can refer to users on github anywhere using `@<username>` syntax. So you can add `@jretz` for Jimmy and `@seekshreyas` for me in your comments which would send us notifications.
+
 ... and you're done :)
 
 
