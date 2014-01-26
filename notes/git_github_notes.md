@@ -47,6 +47,10 @@ Once installed proceed to set up your Github
         - Make sure you __UNCHECK__ the __Initialize the repository with a README file__, and also leave the __Ignore Files__ and __License File__ checkboxes as __NONE__ (as shown in the figure)
         - ![Create your repository](img/createRepo.png "Create your Repository")
         - __Copy your Github repository URL__. Lets call it `<YOUR_GH_REPO_URL>`
+        - Add Jimmy (`@jretz`) and Me (`@seekshreyas`) as __collaborators__ in your private repository, so we can see your files.
+            - You can add collaborators at: `Repo Settings > Collaborators`
+            - !["Add Collaborators"](img/collaborators.png "Add Collaborators")
+            
     3. Open your terminal (on Mac/Linux) or powershell (on Windows), and navigate to the desired folder/directory where you would like to download and set up the course repository. Then,
         - __Clone__ the repository on your machine
             - `$ git clone git@github.com:jretz/datamining290.git <FOLDERNAME (optional)>`
