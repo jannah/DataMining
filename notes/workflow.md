@@ -60,13 +60,13 @@ To submit your homework, click on the __Open a Pull Request__ button, on [Your R
 
 ![Initiate Pull Request](img/pullrequest_init.png "Initiate Pull Request")
 
-__Click this button__
+__Click__ on __Compare & pull request__
 
 2. Fill out the pull request form, as shown below, and submit it. 
 
 ![Submit Pull Request](img/pullrequest_successful.png "Submit Pull Request")
 
-__Click__ on Send pull request
+__Click__ on __Send pull request__
 
 ... and you're done :)
 
