@@ -66,11 +66,15 @@ __Click this button__
 
 ![Submit Pull Request](img/pullrequest_successful.png "Submit Pull Request")
 
+__Click__ on Send pull request
+
+... and you're done :)
+
 #### A __quick tip__
 
 You can refer to users on github anywhere using `@<username>` syntax. So you can add `@jretz` for Jimmy and `@seekshreyas` for me in your comments which would send us notifications.
 
-... and you're done :)
+
 
 
 [Course Repo]: https://github.com/jretz/datamining290
