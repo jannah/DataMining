@@ -67,7 +67,7 @@ Once installed proceed to set up your Github
             - __Modify__ the remotes:
                 <pre>
                 $ git remote rename origin jimmy
-                $ git remote add origin <YOUR_GH_REPO_URL>
+                $ git remote add origin `<YOUR_GH_REPO_URL>`
                 </pre>
             - __Check__ the remotes again, with `$ git remote -v` command. It should show something like this:
                 
