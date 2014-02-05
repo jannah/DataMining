@@ -1,0 +1,133 @@
+Name: Hassan Jannah
+Class: Data Mining, Spring 2012
+Assignment: 1 - Obtain Data
+
+
+Data Description:
+the data is a log of all the user clicks and action on a prototype application developed for a previous class. The data was logged in a couple of SQL tables: a user information table and a log table for all users.
+Activities:
+- Clean up user data and add random values for missing information (i.e. missing Age and Gender information).
+- Standardize gender to (Female, Male).
+- Run a joint SQL to generate one table
+- Export the output to a json file
+- Clean up the JSON file to make it 1 row per line. I could have used CSV but that would remove column titles from each row are useful for command line analysis.
+- Conduct Analysis
+
+Questions:
+1. How many people participated? what are their genders, ages?
+2. What is the total number of clicks? by gender? by Age?
+3. What are the most actions or objects clicked overall? by gender?
+
+Request
+
+egrep -o '\{"user_id": [0-9]*' podium_users.json  | uniq | wc -l
+41
+
+users by Gender
+  egrep -o '\{"user_id": [0-9]*,[^:]*: "[^"]*"' podium_users.json | uniq -c | sort -nr | egrep -o '"* "[^0]*"'|sort | uniq -c
+     20  "Female"
+     21  "Male"
+
+Clicks by Gender
+  egrep -o '"gender": "[^"]*"' podium_users.json | egrep -o ' "[^"]*"' | sort | uniq -c | sort -nr
+   1663  "Male"
+   1317  "Female"
+Total Clicks
+   more podium_users.json | wc -l
+2979
+
+Clicks by Age	  
+egrep -o '("age":) [0-9]*' podium_users.json | sort|uniq -c | sort -nr
+    686 "age": 25
+    645 "age": 26
+    321 "age": 27
+    266 "age": 31
+    194 "age": 32
+    184 "age": 30
+    166 "age": 35
+    118 "age": 20
+     82 "age": 22
+     78 "age": 28
+     77 "age": 33
+     75 "age": 21
+     57 "age": 37
+     24 "age": 29
+      2 "age": 36
+      2 "age": 23
+      1 "age": 39
+      1 "age": 38
+      1 "age": 34
+
+Clicks by Action Type
+ egrep -o '"target": "[^"]*"' podium_users.json | sort | egrep -o '* "[^"]*"' | uniq -c | sort -nr
+   2130  "Change Speed"
+    223  "Highlighted Word"
+    113  "Bigger Font"
+     90  "Play Button"
+     61  "Pause Button"
+     49  "Test File"
+     48  "Change Text Mode"
+     48  "Back"
+     34  "Change Theme"
+     33  "Change Font"
+     31  "Change Line Height"
+     21  "Smaller Font"
+     20  "Pause Overlay"
+     19  "Text Mode"
+     15  "Line Height"
+     14  "Themes"
+     12  "Fonts"
+      8  "New File"
+      7  "Open File"
+      2  "File Opened"
+      2  "Feedback"
+Female Clicks by Action Type
+grep 'Female' podium_users.json | egrep -o '"target": "[^"]*"' | sort | egrep -o '* "[^"]*"' | uniq -c | sort -nr
+    852  "Change Speed"
+    113  "Highlighted Word"
+     62  "Bigger Font"
+     59  "Play Button"
+     44  "Pause Button"
+     29  "Change Text Mode"
+     28  "Test File"
+     28  "Back"
+     25  "Change Theme"
+     12  "Change Line Height"
+     11  "Text Mode"
+     11  "Pause Overlay"
+     10  "Themes"
+      8  "Line Height"
+      7  "Fonts"
+      7  "Change Font"
+      3  "Smaller Font"
+      3  "Open File"
+      3  "New File"
+      1  "File Opened"
+      1  "Feedback"
+	  
+
+Male Clicks by Action type
+ grep 'Male' podium_users.json | egrep -o '"target": "[^"]*"' | sort | egrep -o '* "[^"]*"' | uniq -c | sort -nr
+   1278  "Change Speed"
+    110  "Highlighted Word"
+     51  "Bigger Font"
+     31  "Play Button"
+     26  "Change Font"
+     21  "Test File"
+     20  "Back"
+     19  "Change Text Mode"
+     19  "Change Line Height"
+     18  "Smaller Font"
+     17  "Pause Button"
+      9  "Pause Overlay"
+      9  "Change Theme"
+      8  "Text Mode"
+      7  "Line Height"
+      5  "New File"
+      5  "Fonts"
+      4  "Themes"
+      4  "Open File"
+      1  "File Opened"
+      1  "Feedback"
+
+
