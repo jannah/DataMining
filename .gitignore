@@ -1,9 +1,0 @@
-venv/
-*~
-*.sw[po]
-*.pyc
-*.csv
-*.json
-#*
-/server/shorten.db
-/Homeworks/hw-obtain-data/nbproject/private/
