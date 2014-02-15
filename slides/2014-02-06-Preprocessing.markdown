@@ -263,11 +263,11 @@ change data to a form that is easier to mine or analyze
 
 ---
 
-*Todo: image is transparent and assumes light background*
-
 ## Min-max
 
+.white-background[
 <img src="img/min-max.gif">
+]
 
 ???
 
@@ -278,11 +278,11 @@ change data to a form that is easier to mine or analyze
 
 ---
 
-*Todo: image is transparent and assumes light background*
-
 ## Z-score
 
+.white-background[
 <img src="img/z-score.gif" width=100% />
+]
 
 ???
 
@@ -292,8 +292,6 @@ change data to a form that is easier to mine or analyze
   + When you have a distribution estimate, but are unsure of absolute min-max
 
 ---
-
-*Todo: image scale*
 
 ## Comparison
 
@@ -405,13 +403,11 @@ Are ```A``` and ```B``` close?
   + Another way to think about similarity is correlation
   + All of ```B``` dimensions are 30x of ```A```
   + Maybe just using different units!
-  + If I plotted ```A``` and ```B``` and x,y, what would the result look like?
+  + If I plotted ```A``` and ```B``` as x,y, what would the result look like?
 
 ---
 
-* Todo: chi? *
-
-## Χ^2 Correlation Test
+## χ<sup>2</sup> Correlation Test
 
 <img src="img/correlation.png" width=100%/>
 <img src="img/chiequation.jpg" width=100%/>
@@ -445,7 +441,7 @@ Are ```A``` and ```B``` close?
 
 ## Use in industry
 
-  + Χ^2 used most commonly, handy to have an expected [0-1] range
+  + χ<sup>2</sup> used most commonly, handy to have an expected [0-1] range
   + "Correlation does not imply causation"
   + A->B, B->A, C->A,B, A->B->A..., coincidence
 
