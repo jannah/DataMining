@@ -8,10 +8,11 @@ WORD_RE = re.compile(r"[\w']+")
 
 class ReviewWordCount(MRJob):
     INPUT_PROTOCOL = JSONValueProtocol
-
+    
     def extract_words(self, _, record):
         """Extract words using a regular expression.  Normalize the text to
         ignore capitalization."""
+       
         if record['type'] == 'review':
             for word in WORD_RE.findall(record['text']):
                 yield [word.lower(), 1]
@@ -25,6 +26,11 @@ class ReviewWordCount(MRJob):
         extract_words: <line, record> => <word, count>
         count_words: <word, counts> => <word, total>
         """
+#        extracted = self.extract_words
+#        counts = self.count_words
+#        print extracted
+#        print counts
+        print 'stepping'
         return [
             self.mr(self.extract_words, self.count_words),
         ]
