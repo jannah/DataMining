@@ -1,0 +1,12 @@
+Request
+
+Google Places API
+Request URL:
+Find all indian restaurants near berkeley
+https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.8668,-122.2536&radius=50000&types=food&keyword=indian&sensor=false&key=****
+
+Commands:
+wget "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.8668,-122.2536&radius=50000&types=food&keyword=indian&sensor=false&key=***"
+rename to places.json
+
+
