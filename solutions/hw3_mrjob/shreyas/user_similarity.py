@@ -20,7 +20,7 @@ class UserSimilarity(MRJob):
         """
         return [
             self.mr(mapper=self.mapper1, reducer=self.reducer1),
-            self.mr(mapper=...),
+            # self.mr(mapper=...),
         ]
 
 
