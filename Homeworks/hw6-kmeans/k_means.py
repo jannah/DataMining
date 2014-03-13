@@ -32,7 +32,7 @@ def pick_centroids(xs, num):
 #    print count
     for i in range(1,num+1):
 #        print i
-        xs_index = int(math.floor(count*i/count-count/(2*num)+2))
+        xs_index = int(math.floor(count*i/count-count/(2*num)+1))
         c.append(xs[xs_index])
 #    print c
         
