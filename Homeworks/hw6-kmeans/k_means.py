@@ -61,7 +61,7 @@ def centroid(xs):
         for x in xs:
             sum+= x
         c = sum/count
-        print "new centroid(%s)=%s" % (count, c)
+        #print "new centroid(%s)=%s" % (count, c)
     return c
     ##/
 
@@ -81,7 +81,7 @@ def cluster(xs, centroids):
 #        print dist
 #        print cluster_id
         clusters[cluster_id].append(x)
-    print "clusters=%s" % clusters
+    #print "clusters=%s" % clusters
     return clusters
 
 
@@ -91,7 +91,7 @@ def iterate_centroids(xs, centroids):
     err = 0.001  # minimum amount of allowed centroid movement
     observed_error = 1  # Initialize: maxiumum amount of centroid movement
     new_clusters = [[] for c in centroids]  # Initialize: clusters
-    print 'new_clusters=%s' % new_clusters
+    #print 'new_clusters=%s' % new_clusters
     while observed_error > err:
         new_clusters = cluster(xs, centroids)
 #        print new_clusters
