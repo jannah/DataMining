@@ -26,7 +26,7 @@ class ReviewWordCount(MRJob):
         count_words: <word, counts> => <word, total>
         """
         return [
-            self.mr(self.extract_words, self.count_words),
+            self.mr(mapper=self.extract_words, reducer=self.count_words),
         ]
 
 
