@@ -40,3 +40,5 @@ Evaluation Comments
 
 @faye_ip 's MultiStep map-reduce job with __output caching__ to yield only at the right time. She has kindly provided [her reference for code at the mrJOB documenations](https://pythonhosted.org/mrjob/guides/writing-mrjobs.html#setup-and-teardown-of-tasks)
 
+Take a look at her __not yielding__ in the first step, only initializing the variables while the second step yields into those variables. According to @jretz this has caching properties as the variable value is stored on the mapper and yields only when a step is complete. It brings down the network traffic, etc ..
+
