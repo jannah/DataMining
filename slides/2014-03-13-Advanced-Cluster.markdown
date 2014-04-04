@@ -6,15 +6,6 @@ class: left, top, inverse
 
 # Advanced Clustering
 
-
-???
-
-## Questions from last week
-
-  + Heuristic for choosing # of clusters? √(n/2)
-  + k-means: how to calculate the centroid?
-  + k-medoids: how to calculate the medoid?
-
 ---
 
 ## Review
@@ -303,7 +294,7 @@ class: left, top, inverse
 
 ---
 
-## Distance<sup>2</sup>
+## Distance²
 
 .tight-code[
 ```dist(o,C)**2 / sum(dist(o,c)**2 for c in clusters))```
