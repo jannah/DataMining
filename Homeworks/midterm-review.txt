@@ -1,0 +1,9 @@
+Midterm Review
+Q#2: (line order ltr) Mode, median, mean, skew: positive
+Q#3: (line order ltr) Mean, median, mode, skey: negative
+Q#11:
+The step size (learning rate) is too high so when the solution approaches the bottom of the curve it overshoots the bottom and starts increasing rapidly
+
+E2-E1=2.57
+E3-E2=6.08
+E4-E3=12.025
