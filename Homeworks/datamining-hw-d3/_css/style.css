@@ -10,28 +10,38 @@ and open the template in the editor.
 
 
 body {
-  font: 10px sans-serif;
+    font: 10px sans-serif;
 }
 
 .axis path,
 .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
 
 .bar {
-  fill: steelblue;
+    fill: steelblue;
 }
 
 .x.axis path {
-  display: none;
+    display: none;
 }
 
 .legend line {
-  stroke: #000;
-  shape-rendering: crispEdges;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
 .hide{
     display:none;
+}
+#tooltip {
+    font: 2em sans-serif;
+    position: absolute;
+    width: 200px;
+    /* height: 28px; */
+    pointer-events: none;
+    background-color: rgba(255,155,118,.4);
+    z-index: 200;
+    padding: 5px;
 }

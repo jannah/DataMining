@@ -92,7 +92,7 @@ function prepareDatasets(data, key, key2)
                 for (var i = 0, j = leaves.length; i < j; i++)
                 {
                     var leaf = leaves[i];
-                    list.push(leaf);
+//                    list.push(leaf);
                 }
                 return {'list': list, count: leaves.length};
             })
@@ -165,17 +165,17 @@ areaChart = function() {
         x.domain(data.map(function(d) {
             return d.key;
         }));
-       
-       svg.selectAll(".col-group").remove();
+
+        svg.selectAll(".col-group").remove();
         var vis1 = svg.selectAll(".col-group")
                 .data(data)
                 .enter().append("g")
                 .classed("col-group", true)
 //                .classed(key1,true)
-                .classed("active-group", function(d,i){
+                .classed("active-group", function(d, i) {
                     console.log(i);
-            return true;
-        })
+                    return true;
+                })
                 .attr("transform", function(d) {
                     return "translate(" + x(d.key) + ",0)";
                 });
@@ -201,9 +201,23 @@ areaChart = function() {
                 .attr("opacity", 1)
                 .on("mouseover", function(d, i) {
                     d3.select(this).style("opacity", .1);
+                    console.log(d);
+                    var html = "<span>" +key2+"="+ d.key + "<br>" +
+                            (d.values.count) + " cusomters<br>" +
+                            (Math.round((d.y1 - d.y0)* 1000) / 10) + "%</span>"
+                    d3.select("#tooltip")
+                            .style("visibility", "visible")
+                            .html(html)
+                            .style("top", function() {
+                                return (d3.event.pageY - 70) + "px";
+                            })
+                            .style("left", function() {
+                                return (d3.event.pageX - 100) + "px";
+                            });
                 })
                 .on("mouseout", function(d, i) {
                     d3.select(this).style("opacity", 1);
+                    d3.select("#tooltip").style("visibility", "hidden");
                 });
 //        vis1.selectAll(".column").transition().duration(1500)
 //                .attr("width", x.rangeBand())
@@ -224,6 +238,7 @@ areaChart = function() {
                 .transition().duration(1000)
                 .call(yAxis);
     }
+
     self.drawLegend = function(data, key1, key2)
     {
         svg.selectAll(".legend").remove();
@@ -235,7 +250,7 @@ areaChart = function() {
                     return "translate(0," + i * 20 + ")";
                 });
         legend.append("rect")
-                .attr("x", width )
+                .attr("x", width)
                 .attr("width", 18)
                 .attr("height", 18)
                 .style("fill", color);
